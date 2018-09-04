@@ -1,5 +1,6 @@
 import React from 'react';
 import CheckRecord from './CheckRecord.jsx';
+import styles from './PersonalRecord.css';
 
 class PersonalRecord extends React.Component {
   constructor(props) {
@@ -59,7 +60,7 @@ class PersonalRecord extends React.Component {
               {this.state.error}
             </h3>
           }
-          <label> Bench Press: </label>
+          <label id="benchpress"> Bench Press: </label>
           <input type='text' value={this.state.benchpress} onChange={this.handleBenchPressChange} />
           <label> Deadlift: </label>
           <input type='text' value={this.state.deadlift} onChange={this.handleDeadliftChange} />

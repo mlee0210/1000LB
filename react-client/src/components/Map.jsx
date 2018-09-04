@@ -17,34 +17,35 @@ class GymMap extends React.Component {
   }
 
   onClick(props, marker, e) {
-    let infoWindow = new google.maps.InfoWindow({content: 'Hello World'});
-    infoWindow.open();
+    console.log('props: ', props.name);
   }
 
   render() {
     const style = {
-      width: '50%',
-      height: '350px'
+      position:'absolute',
+      left: '985px',
+      width: '30%',
+      height: '400px'
     }
     return (
-      <Map google={this.props.google} style={style} center={this.state.center} zoom={14}>
-
-        <Marker
-            name={'Equinox Sports Club San Francisco'}
-            onClick={this.onClick}
-            position={{ lat: 37.787205, lng: -122.403806 }} />
-
-        <Marker
-            name={'Crunch Fitness-Yerba Buena'}
-            onClick={this.onClick}
-            position={{ lat: 37.783644, lng: -122.398517 }} />
- 
-        <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              <h1>SF</h1>
-            </div>
-        </InfoWindow>
-      </Map>
+        <Map google={this.props.google} style={style} zoom={13}>
+  
+          <Marker
+              name={'Equinox Sports Club San Francisco'}
+              onClick={this.onClick}
+              position={{ lat: 37.787205, lng: -122.403806 }} />
+  
+          <Marker
+              name={'Crunch Fitness-Yerba Buena'}
+              onClick={this.onClick}
+              position={{ lat: 37.783644, lng: -122.398517 }} />
+   
+          <InfoWindow onClose={this.onInfoWindowClose}>
+              <div>
+                <h1>{this.props.name}</h1>
+              </div>
+          </InfoWindow>
+        </Map>
     );
   }
 }
