@@ -32,7 +32,7 @@ class App extends React.Component {
         <h1>The Gym Rulebook</h1>
         <table className='rules'> 
           <tr>
-            <th>Total</th>
+            <th>Total(in lbs)</th>
             <th>Level</th>
             <th>Allowed</th>
             <th>Not Allowed</th>
